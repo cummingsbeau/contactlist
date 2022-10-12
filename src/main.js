@@ -11,12 +11,13 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBJa1SPjo1Wm0ZgYXZnmdmvoqs_hHlmiXU",
-  authDomain: "vue-firebase-auth-bafc4.firebaseapp.com",
-  projectId: "vue-firebase-auth-bafc4",
-  storageBucket: "vue-firebase-auth-bafc4.appspot.com",
-  messagingSenderId: "728860345284",
-  appId: "1:728860345284:web:b163b8b54d1f40a5c15a91",
+  apiKey: "AIzaSyDMpgbQLcsLyCzwb1PWJNnOJPpXEGNVIV4",
+  authDomain: "contactlist-a93aa.firebaseapp.com",
+  projectId: "contactlist-a93aa",
+  storageBucket: "contactlist-a93aa.appspot.com",
+  messagingSenderId: "856159325926",
+  appId: "1:856159325926:web:ec7e8efb22f6c226787527",
+  measurementId: "G-HH1VXM280M"
 };
 
 // Initialize Firebase

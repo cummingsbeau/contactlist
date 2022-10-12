@@ -52,7 +52,7 @@ export default {
   data() {
     return {
       email: "",
-      password: "123456",
+      password: "",
     };
   },
   methods: {

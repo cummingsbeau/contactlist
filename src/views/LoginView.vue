@@ -17,7 +17,7 @@
           class="form-control"
           type="password"
           name="password"
-          placeholder="password123"
+          placeholder="password"
         />
       </div>
       <div class="alternative-option mt-4">

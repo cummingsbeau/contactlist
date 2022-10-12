@@ -6,13 +6,9 @@
         <img src="./assets/logo.png" width="30" class="me-2" alt="" />
         Vue Firebase Authentication
       </div>
-      <div class="nav-el">
-        <a href="https://github.com/vladpostu/vue-firebase-auth" target="blank"
-          >GitHub Repo</a
-        >
-      </div>
     </nav>
   </div>
+
   <router-view id="content" />
 </template>
 
@@ -73,11 +69,11 @@
   margin-bottom: 15px;
 }
 
-.input > label {
+.input>label {
   text-align: start;
 }
 
-.input > input {
+.input>input {
   margin-top: 6px;
   height: 38px !important;
 }
@@ -119,7 +115,7 @@
   text-align: center;
 }
 
-.alternative-option > span {
+.alternative-option>span {
   color: #0d6efd;
   cursor: pointer;
 }
