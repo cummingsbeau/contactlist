@@ -17,7 +17,7 @@ const firebaseConfig = {
   storageBucket: "contactlist-a93aa.appspot.com",
   messagingSenderId: "856159325926",
   appId: "1:856159325926:web:ec7e8efb22f6c226787527",
-  measurementId: "G-HH1VXM280M"
+  measurementId: "G-HH1VXM280M",
 };
 
 // Initialize Firebase

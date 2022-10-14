@@ -3,8 +3,7 @@
   <div class="navbar">
     <nav class="nav">
       <div class="nav-el" id="name_project">
-        <img src="./assets/logo.png" width="30" class="me-2" alt="" />
-        Vue Firebase Authentication
+        <h3>Address Book</h3>
       </div>
     </nav>
   </div>
@@ -20,17 +19,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid lightgray;
+  border: 1px solid grey;
   padding: 4rem 4rem;
   border-radius: 5px;
-  background: #fefefe;
+  background: white;
 }
 
-.background {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  background: rgb(250, 250, 250);
+#background {
+  background-image: url("../src/assets/email-pattern.jpeg");
+  background-repeat: repeat;
 }
 
 .navbar {
@@ -69,11 +66,11 @@
   margin-bottom: 15px;
 }
 
-.input>label {
+.input > label {
   text-align: start;
 }
 
-.input>input {
+.input > input {
   margin-top: 6px;
   height: 38px !important;
 }
@@ -115,7 +112,7 @@
   text-align: center;
 }
 
-.alternative-option>span {
+.alternative-option > span {
   color: #0d6efd;
   cursor: pointer;
 }
