@@ -1,9 +1,10 @@
 <template>
-  <div class="background"></div>
+  <div class="body"></div>
   <div class="navbar">
     <nav class="nav">
       <div class="nav-el" id="name_project">
         <h3>Address Book</h3>
+        <div class="topnav-right">{{ this.email }}</div>
       </div>
     </nav>
   </div>
@@ -25,7 +26,7 @@
   background: white;
 }
 
-#background {
+body {
   background-image: url("../src/assets/email-pattern.jpeg");
   background-repeat: repeat;
 }
@@ -121,5 +122,14 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+}
+
+ul {
+  position: absolute;
+  display: flex;
+  right: 0;
+  flex-direction: row !important;
+  gap: 1rem;
+  margin-right: 1rem;
 }
 </style>
