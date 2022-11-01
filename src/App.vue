@@ -64,11 +64,22 @@ span:hover {
 h2.mb-3 {
   text-align: center;
 }
-.btn{
-color="accent"
-  depressed
-  elevation="2"
-  outlined
-  plain
-  raised
+
+.btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 3rem;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #fafafa;
+  border-radius: 53px;
+  border: 3px solid #1e1b1b;
+  color: #1e1b1b;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: flex;
+}
 </style>

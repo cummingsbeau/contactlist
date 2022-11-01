@@ -25,9 +25,7 @@
         Already have an account? <span @click="moveToLogin">Login</span>
       </div>
 
-      <button type="submit" id="register_button" class="mt-4 btn-pers">
-        Register
-      </button>
+      <button type="submit" id="register_button" class="btn">Register</button>
       <div
         class="alert alert-warning alert-dismissible fade show mt-5 d-none"
         role="alert"

@@ -66,7 +66,7 @@ onMounted(() => {
 <template>
   <main class="app">
     <section class="create-todo">
-      <h5>CREATE A CONTACT</h5>
+      <h5>Create A Contact</h5>
       <form id="new-todo-form" class="contact_form" @submit.prevent="addTodo">
         <input
           type="text"
@@ -92,12 +92,12 @@ onMounted(() => {
           required
           v-model="phoneNumber"
         />
-        <input type="submit" value="Add New Contact" />
+        <input type="submit" class="btn" value="Add New Contact" />
       </form>
     </section>
 
     <section class="todo-list">
-      <h5 class="heading">CONTACT LIST</h5>
+      <h5 class="heading">Contact List</h5>
       <div class="list" id="todo-list">
         <div :key="ind" v-for="(todo, ind) in todos_asc" :class="`todo-item`">
           <TableCell
@@ -150,6 +150,9 @@ onMounted(() => {
     background-color: #fff;
   }
 }
+h5 {
+  text-align: center;
+}
 .create-todo input[type="text"],
 .create-todo input[type="email"] {
   display: block;
@@ -201,12 +204,10 @@ onMounted(() => {
 .create-todo input[type="submit"] {
   display: block;
   width: 100%;
-  font-size: 1.125rem;
   padding: 1rem 1.5rem;
-  color: #fff;
-  background-color: var(--primary);
+  color: black;
+  background-color: white;
   border-radius: 0.5rem;
-  box-shadow: var(--personal-glow);
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }

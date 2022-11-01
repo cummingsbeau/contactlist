@@ -20,18 +20,15 @@
           placeholder="password"
         />
       </div>
+      <button type="submit" class="btn" id="login_button">Login</button>
       <div class="alternative-option mt-4">
         You don't have an account? <span @click="moveToRegister">Register</span>
       </div>
-      <button type="submit" class="btn" id="login_button" MDBBtn color="primary" floating>
-        Login
-      </button>
       <div
         class="alert alert-warning alert-dismissible fade show mt-5 d-none"
         role="alert"
         id="alert_1"
       >
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
         <button
           type="button"
           class="btn-close"
