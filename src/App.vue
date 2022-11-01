@@ -3,7 +3,7 @@
   <div class="navbar">
     <nav class="nav">
       <div class="nav-el" id="name_project">
-        <h3>Address Book</h3>
+        <h4 class="main-heading">Address Book</h4>
         <div class="topnav-right">{{ this.email }}</div>
       </div>
     </nav>
@@ -13,9 +13,22 @@
 </template>
 
 <style>
-/* CUSTOM STYLE */
+:root {
+  --primary: #ea40a4;
+  --business: #3a82ee;
+  --personal: var(--primary);
+  --light: #eee;
+  --grey: #888;
+  --dark: #313154;
+  --danger: #ff5b57;
 
-#content {
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  --business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+  --personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+}
+
+.container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -24,6 +37,11 @@
   padding: 4rem 4rem;
   border-radius: 5px;
   background: white;
+  max-width: 500px;
+}
+
+.main-heading {
+  margin: 20px;
 }
 
 body {
@@ -31,105 +49,26 @@ body {
   background-repeat: repeat;
 }
 
-.navbar {
-  background: #fafafa;
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  height: 70px;
-  box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
-    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
-    100px 100px 80px rgba(0, 0, 0, 0.07);
-}
-
-.nav {
-  width: 80%;
-  min-width: 400px;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background: #fafafa;
-}
-
-#name_project {
-  font-weight: 700;
-}
-
-.container {
-  width: 400px;
-  max-width: 95%;
-}
-
-.input {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-}
-
-.input > label {
-  text-align: start;
-}
-
-.input > input {
-  margin-top: 6px;
-  height: 38px !important;
-}
-
-/* From uiverse.io */
-.btn-pers {
-  position: relative;
-  left: 50%;
-  padding: 1em 2.5em;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-weight: 700;
-  color: #000;
-  background-color: #fff;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
+span {
+  color: blue;
+  /* Change this with links color*/
   cursor: pointer;
-  outline: none;
-  transform: translateX(-50%);
+  text-decoration: underline;
 }
 
-.btn-pers:hover {
-  background-color: #198754;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-  color: #fff;
-  transform: translate(-50%, -7px);
+span:hover {
+  color: #444444;
+  /* Change the value to with anchors hover color*/
 }
 
-.btn-pers:active {
-  transform: translate(-50%, -1px);
-}
-
-/*  */
-
-.alternative-option {
+h2.mb-3 {
   text-align: center;
 }
-
-.alternative-option > span {
-  color: #0d6efd;
-  cursor: pointer;
-}
-
-#sign_out {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-ul {
-  position: absolute;
-  display: flex;
-  right: 0;
-  flex-direction: row !important;
-  gap: 1rem;
-  margin-right: 1rem;
-}
+.btn{
+color="accent"
+  depressed
+  elevation="2"
+  outlined
+  plain
+  raised
 </style>

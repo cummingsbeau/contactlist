@@ -15,8 +15,4 @@ vue-firebase-auth is a web app that let you
 - **VueJS** framework
 - **Google Firebase** 
 
-### Executing program
 
-Visit this [link](https://vladpostu.github.io/vue-firebase-auth/)
-# addressapp
-# addressapp

@@ -12,7 +12,8 @@
     "firebase": "^9.11.0",
     "serve": "^6.5.8",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.3"
+    "vue-router": "^4.0.3",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

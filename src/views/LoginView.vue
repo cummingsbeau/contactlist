@@ -23,7 +23,7 @@
       <div class="alternative-option mt-4">
         You don't have an account? <span @click="moveToRegister">Register</span>
       </div>
-      <button type="submit" class="mt-4 btn-pers" id="login_button">
+      <button type="submit" class="btn" id="login_button" MDBBtn color="primary" floating>
         Login
       </button>
       <div
