@@ -66,6 +66,7 @@ h2.mb-3 {
 }
 
 .btn {
+  text-align: center;
   position: relative;
   display: flex;
   align-items: center;
@@ -80,6 +81,8 @@ h2.mb-3 {
   color: #1e1b1b;
   font-weight: bold;
   letter-spacing: 1px;
-  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
 }
 </style>

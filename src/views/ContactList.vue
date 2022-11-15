@@ -204,6 +204,7 @@ h5 {
 .create-todo input[type="submit"] {
   display: block;
   width: 100%;
+
   padding: 1rem 1.5rem;
   color: black;
   background-color: white;
@@ -223,7 +224,7 @@ h5 {
 .todo-list .todo-item {
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: #fafafa;
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: var(--shadow);
@@ -244,7 +245,7 @@ h5 {
   display: block;
   padding: 0.5rem;
   border-radius: 0.25rem;
-  color: #fff;
+  color: #fafafa;
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
