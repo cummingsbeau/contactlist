@@ -1,16 +1,15 @@
 <!-- eslint-disable vue/no-side-effects-in-computed-properties -->
 <script setup>
+
 import { ref, onMounted, computed, watch, reactive } from "vue";
 
 import TableCell from "../components/TableCell.vue";
 
 const todos = ref([]);
-
 const name = ref("");
 const email = ref("");
 const phoneNumber = ref("");
 let data = reactive({ isEdit: "" });
-
 const todos_asc = computed(() =>
   todos.value.sort((a, b) => {
     return a.createdAt - b.createdAt;

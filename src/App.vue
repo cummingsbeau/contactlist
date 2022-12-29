@@ -28,6 +28,10 @@
   --personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
 }
 
+.navbar {
+  background-color: #fafafa;
+}
+
 .container {
   position: absolute;
   top: 50%;
