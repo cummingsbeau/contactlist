@@ -33,7 +33,7 @@ const addTodo = () => {
   if (
     name.value.trim() === "" ||
     email.value.trim() === "" ||
-    phoneNumber.value.trim() === ""
+    phoneNumber.value === ""
   ) {
     return;
   }
@@ -68,24 +68,24 @@ onMounted(() => {
       <form id="new-todo-form" class="contact_form" @submit.prevent="addTodo">
         <input
           type="text"
-          name="content"
-          id="content"
+          name="name"
+          id="name"
           placeholder="Enter Name"
           required
           v-model="name"
         />
         <input
           type="email"
-          name="content"
-          id="content"
+          name="email"
+          id="email"
           placeholder="Enter Email"
           required
           v-model="email"
         />
         <input
-          type="text"
-          name="content"
-          id="content"
+          type="number"
+          name="phoneNumber"
+          id="phoneNumber"
           placeholder="Enter Phone Number"
           required
           v-model="phoneNumber"

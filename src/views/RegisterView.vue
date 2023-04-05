@@ -31,7 +31,7 @@
         role="alert"
         id="alert_2"
       >
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Registration Error. Please Try Again
         <button
           type="button"
           class="btn-close"
@@ -57,17 +57,16 @@ export default {
   methods: {
     register(submitEvent) {
       // data update
-      $(this).email = submitEvent.target.elements.email.val();
-      $(this).password = submitEvent.target.elements.password.val();
-
+      const fd = new FormData(submitEvent.target);
+      const self = this;
       // firebase registration
       const auth = getAuth();
-      createUserWithEmailAndPassword(auth, $(this).email, $(this).password)
+      createUserWithEmailAndPassword(auth, fd.get("email"), fd.get("password"))
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
           console.log("Registration completed");
-          $(this).$router.push("/");
+          self.$router.push("/");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -81,7 +80,7 @@ export default {
         });
     },
     moveToLogin() {
-      $(this).$router.push("/");
+      this.$router.push("/");
     },
   },
 };

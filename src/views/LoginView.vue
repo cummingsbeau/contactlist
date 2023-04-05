@@ -53,15 +53,16 @@ export default {
   },
   methods: {
     login(submitEvent) {
-      $(this).email = submitEvent.target.elements.email.val();
-      $(this).password = submitEvent.target.elements.password.val();
-
+      const self = this;
+      const fd = new FormData(submitEvent.target);
       const auth = getAuth();
-      signInWithEmailAndPassword(auth, $(this).email, $(this).password)
-        .then(() => {
-          $(this).$router.push("/dashboard");
+      signInWithEmailAndPassword(auth, fd.get("email"), fd.get("password"))
+        .then((data) => {
+          console.log("data", data);
+          self.$router.push("/dashboard");
         })
         .catch((error) => {
+          console.log("Error", error.code);
           const errorCode = error.code;
           const errorMessage = error.message;
           console.log(errorCode);
@@ -73,7 +74,7 @@ export default {
         });
     },
     moveToRegister() {
-      $(this).$router.push("/register");
+      this.$router.push("/register");
     },
   },
 };
