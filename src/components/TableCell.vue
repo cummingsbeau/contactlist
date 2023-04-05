@@ -33,26 +33,28 @@ defineProps({
 
 const handleRef = () => {
   emits("handleFocus");
-  nextTick(() => inputRef.value.focus());
+  nextTick(() => inputRef.value().focus());
 };
 
 const handleBlur = () => {
   emits("handleBlur");
 };
+/* import { ref, defineProps, defineEmits, nextTick } from "vue";
+const inputRef = ref(null);
+const emits = defineEmits(["handleFocus", "handleBlur"]);
+defineProps({
+  label: String,
+  name: String,
+  isEdit: String,
+  todo: Object,
+});
+
+const handleRef = () => {
+  emits("handleFocus");
+  nextTick(() => inputRef.value.focus());
+};
+
+const handleBlur = () => {
+  emits("handleBlur");
+}; */
 </script>
-<style scoped>
-.table_value {
-  min-height: 50px;
-  margin-bottom: 0rem;
-  max-width: 200px;
-  word-break: break-all;
-}
-@media only screen and (max-width: 1000px) {
-  .app {
-    max-width: 90%;
-  }
-  .table_label {
-    min-width: 150px;
-  }
-}
-</style>

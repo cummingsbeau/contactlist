@@ -1,0 +1,229 @@
+$color_1: blue;
+$color_2: #444444;
+$color_3: #1e1b1b;
+$color_4: var(--dark);
+$color_5: black;
+$color_6: #fafafa;
+$color_7: var(--grey);
+$background-color_1: #fff;
+$background-color_2: white;
+$background-color_3: #fafafa;
+$background-color_4: var(--primary);
+$background-color_5: var(--danger);
+$background-color_6: #fafafa;
+:root {
+	--primary: #ea40a4;
+	--business: #3a82ee;
+	--personal: var(--primary);
+	--light: #eee;
+	--grey: #888;
+	--dark: #313154;
+	--danger: #ff5b57;
+	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	--business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+	--personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+}
+.navbar {
+	background-color: $background-color_1;
+}
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid grey;
+	padding: 4rem 4rem;
+	border-radius: 5px;
+	background: white;
+	max-width: 500px;
+}
+.main-heading {
+	margin: 20px;
+}
+body {
+	background-image: url("/src/assets/email-pattern.jpeg");
+	background-repeat: repeat;
+}
+span {
+	color: $color_1;
+	cursor: pointer;
+	text-decoration: underline;
+	&:hover {
+		color: $color_2;
+	}
+}
+h2.mb-3 {
+	text-align: center;
+}
+.btn {
+	text-align: center;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 3rem;
+	font-size: 16px;
+	text-transform: uppercase;
+	cursor: pointer;
+	background: #fafafa;
+	border-radius: 53px;
+	border: 3px solid #1e1b1b;
+	color: $color_3;
+	font-weight: bold;
+	letter-spacing: 1px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+}
+.table_value {
+    min-height: 50px;
+    margin-bottom: 0rem;
+    max-width: 200px;
+    word-break: break-all;
+  }
+  @media only screen and (max-width: 1000px) {
+    .app {
+      max-width: 90%;
+    }
+    .table_label {
+      min-width: 150px;
+    }
+  }
+
+.app {
+	max-width: 800px;
+	margin: 20px auto;
+}
+h5 {
+	text-align: center;
+}
+.create-todo {
+	input[type="text"] {
+		display: block;
+		font-size: 1.125rem;
+		padding: 1rem 1.5rem;
+		color: $color_1;
+		background-color: $background-color_1;
+		border-radius: 0.5rem;
+		box-shadow: var(--shadow);
+		margin-bottom: 1.5rem;
+		width: 100%;
+	}
+	input[type="email"] {
+		display: block;
+		font-size: 1.125rem;
+		padding: 1rem 1.5rem;
+		color: $color_1;
+		background-color: $background-color_1;
+		border-radius: 0.5rem;
+		box-shadow: var(--shadow);
+		margin-bottom: 1.5rem;
+		width: 100%;
+	}
+	.options {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 1rem;
+		margin-bottom: 1.5rem;
+		label {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 1.5rem;
+			background-color: $background-color_1;
+			border-radius: 0.5rem;
+			box-shadow: var(--shadow);
+			cursor: pointer;
+			div {
+				color: $color_1;
+				font-size: 1.125rem;
+				margin-top: 1rem;
+			}
+		}
+	}
+	input[type="submit"] {
+		display: block;
+		width: 100%;
+		padding: 1rem 1.5rem;
+		color: $color_2;
+		background-color: $background-color_2;
+		border-radius: 0.5rem;
+		cursor: pointer;
+		transition: 0.2s ease-in-out;
+		&:hover {
+			opacity: 0.75;
+		}
+	}
+}
+.heading {
+	margin-top: 40px;
+}
+.contact_form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.5rem 0;
+}
+.todo-list {
+	.list {
+		margin: 1rem 0;
+	}
+	.todo-item {
+		display: flex;
+		align-items: center;
+		background-color: $background-color_3;
+		padding: 1rem;
+		border-radius: 0.5rem;
+		box-shadow: var(--shadow);
+		margin-bottom: 1rem;
+	}
+}
+.todo-item {
+	label {
+		display: block;
+		margin-right: 1rem;
+		cursor: pointer;
+	}
+	.todo-content {
+		flex: 1 1 0%;
+	}
+	.actions {
+		button {
+			display: block;
+			padding: 0.5rem;
+			border-radius: 0.25rem;
+			color: $color_3;
+			cursor: pointer;
+			transition: 0.2s ease-in-out;
+			&:hover {
+				opacity: 0.75;
+			}
+		}
+		.edit {
+			margin-right: 0.5rem;
+			background-color: $background-color_4;
+		}
+		.delete {
+			background-color: $background-color_5;
+			margin-top: 1.5rem;
+		}
+	}
+}
+.todo-item.done {
+	.todo-content {
+		input {
+			text-decoration: line-through;
+			color: $color_4;
+		}
+	}
+}
+@media only screen and (max-width: 1000px) {
+	.app {
+		max-width: 90%;
+	}
+	.list {
+		overflow-x: scroll;
+		background-color: $background-color_1;
+	}
+}
