@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/no-side-effects-in-computed-properties -->
 <script setup>
 import { ref, onMounted, computed, watch, reactive } from "vue";
 
