@@ -49,8 +49,8 @@ import $ from "jquery";
 export default {
   data() {
     return {
-      email: "test@email.com",
-      password: "testing123",
+      email: "",
+      password: "",
     };
   },
   methods: {

@@ -91,7 +91,7 @@ onMounted(() => {
 <template>
   <main class="app">
     <section class="create-todo">
-      <h5>Create A Contact</h5>
+      <h3>Create A Contact</h3>
       <form id="new-todo-form" class="contact_form" @submit.prevent="addTodo">
         <input
           type="text"
@@ -114,7 +114,10 @@ onMounted(() => {
           :class="{ error: errorEmail }"
         />
         <div v-if="errorPhoneNumber" class="invalid-feedback">
-          Phone number incorrect format, must xxx-xxx-xxxx
+          <strong
+            >Invaild Phone Number: Please enter a vaild phone number in the
+            format: xxx-xxx-xxxx</strong
+          >
         </div>
         <input
           type="text"
@@ -130,7 +133,7 @@ onMounted(() => {
     </section>
 
     <section class="todo-list">
-      <h5 class="heading">Contact List</h5>
+      <h3 class="heading">Contact List</h3>
       <div class="list" id="todo-list">
         <div :key="ind" v-for="(todo, ind) in todos_asc" :class="`todo-item`">
           <TableCell

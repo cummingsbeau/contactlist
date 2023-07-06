@@ -33,7 +33,7 @@
         role="alert"
         id="alert_2"
       >
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Invaild Email/Password
         <button
           type="button"
           class="btn-close"

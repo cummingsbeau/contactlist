@@ -3,8 +3,7 @@
   <div class="navbar">
     <nav class="nav">
       <div class="nav-el" id="name_project">
-        <h4 class="main-heading">Address Book</h4>
-        <div class="topnav-right">{{ this.email }}</div>
+        <h4 class="main-heading">Contact List</h4>
       </div>
     </nav>
   </div>
