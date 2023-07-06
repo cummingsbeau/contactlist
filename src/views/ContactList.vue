@@ -1,4 +1,6 @@
+<!-- eslint-disable vue/no-side-effects-in-computed-properties -->
 <script setup>
+/* eslint-disable no-useless-escape */
 import { ref, onMounted, computed, watch, reactive } from "vue";
 
 import TableCell from "../components/TableCell.vue";
@@ -7,6 +9,8 @@ const todos = ref([]);
 const name = ref("");
 const email = ref("");
 const phoneNumber = ref("");
+const errorEmail = ref(false);
+const errorPhoneNumber = ref(false);
 let data = reactive({ isEdit: "" });
 const todos_asc = computed(() =>
   todos.value.sort((a, b) => {
@@ -28,13 +32,37 @@ watch(
   }
 );
 
+const validateEmail = (email) => {
+  return email.match(
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  );
+};
+const validatePhone = (phone) => {
+  const reg = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  return reg.test(phone);
+};
+
 const addTodo = () => {
   if (
     name.value.trim() === "" ||
     email.value.trim() === "" ||
-    phoneNumber.value === ""
+    phoneNumber.value.trim() === ""
   ) {
     return;
+  }
+
+  if (!validateEmail(email.value.trim())) {
+    errorEmail.value = true;
+    return;
+  } else {
+    errorEmail.value = false;
+  }
+
+  if (!validatePhone(phoneNumber.value.trim())) {
+    errorPhoneNumber.value = true;
+    return;
+  } else {
+    errorPhoneNumber.value = false;
   }
 
   todos.value.push({
@@ -67,12 +95,15 @@ onMounted(() => {
       <form id="new-todo-form" class="contact_form" @submit.prevent="addTodo">
         <input
           type="text"
-          name="name"
-          id="name"
+          name="content"
+          id="content"
           placeholder="Enter Name"
           required
           v-model="name"
         />
+        <div v-if="errorEmail" class="invalid-feedback">
+          Email incorrect format, must example@example.com
+        </div>
         <input
           type="email"
           name="email"
@@ -80,14 +111,19 @@ onMounted(() => {
           placeholder="Enter Email"
           required
           v-model="email"
+          :class="{ error: errorEmail }"
         />
+        <div v-if="errorPhoneNumber" class="invalid-feedback">
+          Phone number incorrect format, must xxx-xxx-xxxx
+        </div>
         <input
-          type="number"
+          type="text"
           name="phoneNumber"
           id="phoneNumber"
           placeholder="Enter Phone Number"
           required
           v-model="phoneNumber"
+          :class="{ error: errorPhoneNumber }"
         />
         <input type="submit" class="btn" value="Add New Contact" />
       </form>

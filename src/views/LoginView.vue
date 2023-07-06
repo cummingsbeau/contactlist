@@ -8,7 +8,8 @@
           class="form-control"
           type="text"
           name="email"
-          placeholder="email@address.com"
+          placeholder="email@adress.com"
+          v-model="email"
         />
       </div>
       <div class="input">
@@ -18,6 +19,7 @@
           type="password"
           name="password"
           placeholder="password"
+          v-model="password"
         />
       </div>
       <div class="alternative-option mt-4">
@@ -47,29 +49,25 @@ import $ from "jquery";
 export default {
   data() {
     return {
-      email: "",
-      password: "",
+      email: "test@email.com",
+      password: "testing123",
     };
   },
   methods: {
-    login(submitEvent) {
-      const self = this;
-      const fd = new FormData(submitEvent.target);
+    login() {
       const auth = getAuth();
-      signInWithEmailAndPassword(auth, fd.get("email"), fd.get("password"))
-        .then((data) => {
-          console.log("data", data);
-          self.$router.push("/dashboard");
+      signInWithEmailAndPassword(auth, this.email, this.password)
+        .then(() => {
+          this.$router.push("/dashboard");
         })
         .catch((error) => {
-          console.log("Error", error.code);
           const errorCode = error.code;
           const errorMessage = error.message;
           console.log(errorCode);
           console.log(errorMessage);
           let alert_1 = $("#alert_1");
           alert_1.removeClass("d-none");
-          alert_1.html() == errorMessage;
+          alert_1.html(errorMessage);
           console.log(alert_1);
         });
     },

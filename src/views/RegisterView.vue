@@ -9,6 +9,7 @@
           type="text"
           name="email"
           placeholder="email@adress.com"
+          v-model="email"
         />
       </div>
       <div class="input">
@@ -18,6 +19,7 @@
           type="password"
           name="password"
           placeholder="password"
+          v-model="password"
         />
       </div>
 
@@ -31,7 +33,7 @@
         role="alert"
         id="alert_2"
       >
-        Registration Error. Please Try Again
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
         <button
           type="button"
           class="btn-close"
@@ -55,18 +57,15 @@ export default {
     };
   },
   methods: {
-    register(submitEvent) {
-      // data update
-      const fd = new FormData(submitEvent.target);
-      const self = this;
+    register() {
       // firebase registration
       const auth = getAuth();
-      createUserWithEmailAndPassword(auth, fd.get("email"), fd.get("password"))
+      createUserWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
           console.log("Registration completed");
-          self.$router.push("/");
+          this.$router.push("/");
         })
         .catch((error) => {
           const errorCode = error.code;
