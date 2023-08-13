@@ -58,6 +58,7 @@ export default {
       const auth = getAuth();
       signInWithEmailAndPassword(auth, this.email, this.password)
         .then(() => {
+          this.$store.commit("afterLogin");
           this.$router.push("/dashboard");
         })
         .catch((error) => {
