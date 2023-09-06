@@ -78,8 +78,9 @@ h3 {
 	margin-right: auto;
 	margin-top: 25px;
 }
-.glyphicon glyphicon-log-out{
-background-color: red;
+button.btn.btn-warning:hover {
+	background-color: var(--danger);
+	border-color: var(--danger);
 }
 .table_value {
     min-height: 50px;
@@ -103,7 +104,7 @@ background-color: red;
 h5 {
 	text-align: center;
 }
-.create-todo {
+.create-contact {
 	input[type="text"] {
 		display: block;
 		font-size: 1.125rem;
@@ -171,11 +172,11 @@ h5 {
 	align-items: center;
 	padding: 0.5rem 0;
 }
-.todo-list {
+.contact-list {
 	.list {
 		margin: 1rem 0;
 	}
-	.todo-item {
+	.contact-item {
 		display: flex;
 		align-items: center;
 		background-color: $background-color_3;
@@ -185,13 +186,13 @@ h5 {
 		margin-bottom: 1rem;
 	}
 }
-.todo-item {
+.contact-item {
 	label {
 		display: block;
 		margin-right: 1rem;
 		cursor: pointer;
 	}
-	.todo-content {
+	.contact-content {
 		flex: 1 1 0%;
 	}
 	.actions {
@@ -216,8 +217,8 @@ h5 {
 		}
 	}
 }
-.todo-item.done {
-	.todo-content {
+.contact-item.done {
+	.contact-content {
 		input {
 			text-decoration: line-through;
 			color: $color_4;

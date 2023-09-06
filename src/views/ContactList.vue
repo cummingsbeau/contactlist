@@ -5,15 +5,15 @@ import { ref, onMounted, computed, watch, reactive } from "vue";
 
 import TableCell from "../components/TableCell.vue";
 
-const todos = ref([]);
+const contact = ref([]);
 const name = ref("");
 const email = ref("");
 const phoneNumber = ref("");
 const errorEmail = ref(false);
 const errorPhoneNumber = ref(false);
 let data = reactive({ isEdit: "" });
-const todos_asc = computed(() =>
-  todos.value.sort((a, b) => {
+const contact_asc = computed(() =>
+  contact.value.sort((a, b) => {
     return a.createdAt - b.createdAt;
   })
 );
@@ -23,9 +23,9 @@ const handleFocus = (key) => {
 };
 
 watch(
-  todos,
+  contact,
   (newVal) => {
-    localStorage.setItem("todos", JSON.stringify(newVal));
+    localStorage.setItem("contact", JSON.stringify(newVal));
   },
   {
     deep: true,
@@ -42,7 +42,7 @@ const validatePhone = (phone) => {
   return reg.test(phone);
 };
 
-const addTodo = () => {
+const addContact = () => {
   if (
     name.value.trim() === "" ||
     email.value.trim() === "" ||
@@ -65,7 +65,7 @@ const addTodo = () => {
     errorPhoneNumber.value = false;
   }
 
-  todos.value.push({
+  contact.value.push({
     name: name.value,
     email: email.value,
     phoneNumber: phoneNumber.value,
@@ -79,20 +79,24 @@ const addTodo = () => {
   phoneNumber.value = "";
 };
 
-const removeTodo = (todo) => {
-  todos.value = todos.value.filter((t) => t !== todo);
+const removecontact = (contact) => {
+  contact.value = contact.value.filter((t) => t !== contact);
 };
 
 onMounted(() => {
-  todos.value = JSON.parse(localStorage.getItem("todos")) || [];
+  contact.value = JSON.parse(localStorage.getItem("contact")) || [];
 });
 </script>
 
 <template>
   <main class="app">
-    <section class="create-todo">
+    <section class="create-contact">
       <h3>Create A Contact</h3>
-      <form id="new-todo-form" class="contact_form" @submit.prevent="addTodo">
+      <form
+        id="new-contact-form"
+        class="contact_form"
+        @submit.prevent="addContact"
+      >
         <input
           type="text"
           name="content"
@@ -132,38 +136,42 @@ onMounted(() => {
       </form>
     </section>
 
-    <section class="todo-list">
+    <section class="contact-list">
       <h3 class="heading">Contact List</h3>
-      <div class="list" id="todo-list">
-        <div :key="ind" v-for="(todo, ind) in todos_asc" :class="`todo-item`">
+      <div class="list" id="contact-list">
+        <div
+          :key="ind"
+          v-for="(contact, ind) in contact_asc"
+          :class="`contact-item`"
+        >
           <TableCell
             label="Name"
-            @handleFocus="() => handleFocus(`${todo.createdAt}-${'name'}`)"
+            @handleFocus="() => handleFocus(`${contact.createdAt}-${'name'}`)"
             @handleBlur="() => handleFocus('')"
             name="name"
-            :todo="todo"
+            :contact="contact"
             :isEdit="data.isEdit"
           />
           <TableCell
-            @handleFocus="() => handleFocus(`${todo.createdAt}-${'email'}`)"
+            @handleFocus="() => handleFocus(`${contact.createdAt}-${'email'}`)"
             @handleBlur="() => handleFocus('')"
             label="Email"
             name="email"
-            :todo="todo"
+            :contact="contact"
             :isEdit="data.isEdit"
           />
           <TableCell
             @handleFocus="
-              () => handleFocus(`${todo.createdAt}-${'phoneNumber'}`)
+              () => handleFocus(`${contact.createdAt}-${'phoneNumber'}`)
             "
             @handleBlur="() => handleFocus('')"
             label="Phone Number"
             name="phoneNumber"
-            :todo="todo"
+            :contact="contact"
             :isEdit="data.isEdit"
           />
           <div class="actions">
-            <button class="delete" @click="() => removeTodo(todo)">
+            <button class="delete" @click="() => removecontact(contact)">
               Delete
             </button>
           </div>
